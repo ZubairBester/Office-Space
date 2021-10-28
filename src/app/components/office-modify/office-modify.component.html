@@ -1,0 +1,58 @@
+<form [formGroup]="officeForm">
+  
+
+  <div class="officeModify">
+      <div mat-dialog-actions align="end">
+           <button mat-icon-button   [mat-dialog-close]="true">
+        <mat-icon >close</mat-icon>
+      </button>
+      </div>
+   
+      
+  <h1 mat-dialog-title>{{title}} Office</h1>
+  <div mat-dialog-content>
+    <mat-form-field class="formFields">
+      <mat-label>Office Name</mat-label>
+      <input matInput placeholder=""  matNativeControl required class="form-control" formControlName="name"/>
+    </mat-form-field>
+    <br />
+
+    <mat-form-field class="formFields">
+      <mat-label>Email address</mat-label>
+      <input matInput placeholder="" matNativeControl required class="form-control" formControlName="email" />
+    </mat-form-field>
+    <br />
+
+    <mat-form-field class="formFields">
+      <mat-label>Office telephone</mat-label>
+      <input matInput placeholder=""  class="form-control" formControlName="tel"/>
+    </mat-form-field>
+    <br />
+
+   <mat-form-field class="formFields">
+      <mat-label>Address</mat-label>
+      <input matInput placeholder="" matNativeControl required class="form-control" formControlName="address"/>
+    </mat-form-field>
+    <br />
+
+    <mat-form-field class="formFields">
+      <mat-label>Max number of occupants</mat-label>
+
+      <input matInput placeholder=""  type="number"matNativeControl required class="form-control" formControlName="maxOcc"/>
+
+    </mat-form-field>
+    <br />
+    <mat-form-field class="formFields">
+    <mat-label>Office Colour</mat-label>
+      <mat-select (selectionChange)="selectedValue($event)" class="form-control" formControlName="officeCol">
+        <mat-option [value]="'purple'">Purple</mat-option>
+        <mat-option [value]="'pink'">Pink</mat-option>
+        <mat-option [value]="'black'">Black</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="save">
+    <button mat-button class="saveBtn" type="submit"(click)="onSubmit()"  >Save Office</button>
+  </div>
+</div>
+</form>
